@@ -1,1 +1,21 @@
-check out these cool products
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% const rawData = await fetch("https://www.dnd5eapi.co/api/equipment-categories/armor"); %>
+    <% const json = await rawData.json(); %>
+    
+    <% json.equipment.forEach(item => { %>
+    <div class="itembox">
+    <%= item.name %>
+    </div>
+    
+    <% )} %>
+    
+</body>
+</html>
