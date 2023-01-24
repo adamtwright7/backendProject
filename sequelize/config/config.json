@@ -1,9 +1,1 @@
-{
-  "development": {
-    "username": "ntfvkcxa",
-    "password": process.env.DB_PASSWORD,
-    "database": "ntfvkcxa",
-    "host": "baasu.db.elephantsql.com",
-    "dialect": "postgres"
-  }
-}
+
