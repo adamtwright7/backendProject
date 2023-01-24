@@ -6,7 +6,6 @@ const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const models = require("./sequelize/models");
 const { Customers } = require("./sequelize/models"); // replace this with magic item data later
-require("dotenv").config();
 const router = express.Router(); // we should start using router
 
 // connect session sequelize
@@ -45,6 +44,10 @@ const authenticate = (req, res, next) => {
     res.redirect("/login");
   }
 };
+
+app.get("/", (req, res) => {
+  res.render("pages/home");
+});
 
 app.get("/login", (req, res) => {
   res.render("pages/login");
