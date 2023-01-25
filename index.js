@@ -109,6 +109,7 @@ app.post("/signup", (req, res) => {
     });
   });
   res.status(200).send(`User ${username} added.`);
+  // Should redirect to log in later.
 });
 
 // Log in post route -- actually checks to see if that user exists in the database.
