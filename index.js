@@ -55,6 +55,10 @@ app.get("/login", (req, res) => {
   res.render("pages/login");
 });
 
+app.get("/signup", (req, res) => {
+  res.render("pages/signUp");
+});
+
 app.get("/account", authenticate, (req, res) => {
   user = req.session.user;
   res.render("pages/account", { user });
@@ -73,7 +77,7 @@ app.get("/buy", authenticate, (req, res) => {
   res.render("pages/buy", { user });
 });
 
-// log in
+// log in post route -- actually checks to see if that user exists in the database.
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
   const user = await Customers.findOne({

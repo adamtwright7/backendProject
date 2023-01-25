@@ -1,42 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
-    <title id = "title">login</title>
-</head>
-<body>
-   <div class="box">
-    <div id = "container" class="container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <title id="title">login</title>
+  </head>
+  <body>
+    <div class="logIn">
+      <div id="container" class="container">
         <div class="top">
-            <header>Login</header>
-        </div>
-        <form action="/login" method="post">
-        <div class="input-field">
-            <input type="text" class="input" placeholder="Username" id="">
+          <header>Login</header>
         </div>
         <div class="input-field">
-            <input type="Password" class="input" placeholder="Password" id="">
+          <input class="input" placeholder="Username" id="" />
         </div>
         <div class="input-field">
-            <input type="submit" id = "signUpButton" class="submit" value="Login" id="">
-            <input type="submit" id = "signInButton"class="submit" value="Sign Up" id="">
+          <input class="input" placeholder="Password" id="" />
         </div>
+        <div class="input-field">
+          <button id="signUpButton" class="submit">Sign Up</button>
+          <button id="logInButton" class="submit">Log In</button>
+        </div>
+      </div>
     </div>
-  </form>
-</div>  
-<script>
-  let signUpButton = document.getElementById("signUpButton");
-  let signinButton = document.getElementById("signInButton");
-  let container = document.getElementById("conatiner");
-  let title = document.getElementById("title");
-
-
-  signinButton.onclick = function(){
-
-  }
-</script>
-</body>
+  </body>
 </html>
