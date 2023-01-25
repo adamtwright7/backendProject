@@ -21,6 +21,9 @@ body{
     background-color:rgba(255,255,255,0.7) ;
     height: 278px;
     border-radius: 30px;
+    max-height: 278px;
+    transition: max-height 0.5s;
+    overflow: hidden;
     
 }
 
@@ -79,3 +82,4 @@ label a{
 form{
     gap: 5px;
 }
+
