@@ -123,3 +123,35 @@ font-size: 2.5rem;
     padding: 0 1rem;
     height: 100%;
 }
+
+/* weapon page */
+.mainWeaponBox{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    height: 100%;
+    background-image: url("https://img.freepik.com/premium-photo/rose-gold-marble-texture-background_38607-344.jpg");
+}
+.weaponCard{
+   max-width:300px;
+   border: 2px solid black;
+   margin-top: 10px;
+   overflow: hidden;
+   overflow:auto;
+   
+}
+.weaponCard::-webkit-scrollbar {
+    display: none;
+}
+
+
+.weaponPic{
+   max-width: 300px;
+   max-height: 500px;
+}
+.rare{
+    text-align: center;
+}
+
+
+/* LOGIN PAGE CSS */
