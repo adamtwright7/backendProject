@@ -5,7 +5,8 @@ const PORT = 3010;
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const models = require("./sequelize/models");
-const { Customers } = require("./sequelize/models"); // replace this with magic item data later
+const { Customers, Orders, Products } = require("./sequelize/models"); // replace this with magic item data later
+const { Op } = require("sequelize"); // we're going to need some advanced querries
 
 // connect session sequelize
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
@@ -22,6 +23,7 @@ store.sync();
 
 // body parser for forms
 const bodyParser = require("body-parser");
+const { where } = require("sequelize");
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -100,6 +102,53 @@ app.post("/logout", (res, req) => {
     req.session.destroy();
     res.redirect("/pages/login");
   }
+});
+
+/// Product pages! Every page will be based on a similar ejs template, but be passed different data from the Products database.
+/// The data from the Products database is currently contained in the 'Products' variable. I'll pass it to each page as the "trinkets" variable.
+/// This way the ejs files can all loop through the trinkets variable without any renaming between pages.
+/// (Also I'm passing a lil Tasha quip to each page)
+
+// Armor page. I'll move the bracers and cloaks over here.
+app.get("/products/armor", async (req, res) => {
+  // get only the products that are armor
+
+  let trinkets = await Products.findAll({
+    where: {
+      [Op.or]: [
+        { type: { [Op.startsWith]: "Armor" } },
+        { name: { [Op.startsWith]: "Cloak" } },
+      ],
+    },
+  });
+
+  let quip = "You wouldn't need any of this if you could learn my spells.";
+  res.render("pages/products/armor", { trinkets, quip });
+});
+
+// Foci page
+app.get("/products/foci", (req, res) => {
+  res.render("pages/products/foci");
+});
+
+// Potions page
+app.get("/products/potions", (req, res) => {
+  res.render("pages/products/potions");
+});
+
+// Rings page
+app.get("/products/rings", (req, res) => {
+  res.render("pages/products/rings");
+});
+
+// Weapons page
+app.get("/products/weapons", (req, res) => {
+  res.render("pages/products/weapons");
+});
+
+// woundrousItems page
+app.get("/products/wondrous-items", (req, res) => {
+  res.render("pages/products/woundrousItems");
 });
 
 // listen
