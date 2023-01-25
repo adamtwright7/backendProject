@@ -14,25 +14,27 @@
           <header>Sign Up</header>
           <label class="memberLabel" for="">Already a Member? <a class = "member"href = "/login">Click here</a></label>
         </div>
-        <div class="input-field">
-          <input class="input" placeholder="Email" id="" />
-        </div>
-        <div class="input-field">
-          <input class="input" placeholder="Username" id="" />
-        </div>
-        <div class="input-field">
-            <input class="input" placeholder="Password" id="" />
+        <form action="/signup" method="post">
+          <div class="input-field">
+            <input class="input" name="email" placeholder="Email" id="" />
           </div>
           <div class="input-field">
-            <label for="">Input Dragon Payement Info</label>
-            <input class="input" placeholder="Payement Info" id="" />
+            <input class="input" name="username" placeholder="Username" id="" />
           </div>
           <div class="input-field">
-            <input class="input" placeholder="Address" id="" />
+            <input class="input" name="password" placeholder="Password" id="" />
           </div>
-        <div class="input-field">
-            <button type="submit"  id = "signInForm" class="submit" value="Login">Finalize</button>
-        </div>
+          <div class="input-field">
+            <label for="">Input your payement information below. All major credit cards and ancient wyrms of Toril accepted. Tasha's Trinkets delivers to Oerth, Toril, Krynn, Khorvaire, and Barovia. </label>
+            <input class="input" name="paymentinfo" placeholder="Payment Info" id="" />
+          </div>
+          <div class="input-field">
+            <input class="input" name="address" placeholder="Address" id="" />
+          </div>
+          <div class="input-field">
+            <button type="submit" id = "signInForm" class="submit" value="Login">Finalize</button>
+          </div>
+        </form>
       </div>
     </div>
   </form>
