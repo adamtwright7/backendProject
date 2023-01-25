@@ -2,11 +2,12 @@ const express = require("express");
 const app = express();
 const PORT = 3010;
 // importing stuff for sessions and cookies
-const session = require("express-session");
-const cookieParser = require("cookie-parser");
+const session = require("express-session"); // for sessions
+const cookieParser = require("cookie-parser"); // for cookies
 const models = require("./sequelize/models");
 const { Customers, Orders, Products } = require("./sequelize/models"); // replace this with magic item data later
 const { Op } = require("sequelize"); // we're going to need some advanced querries
+const bcrypt = require("bcrypt"); // for hashing passwords
 
 // connect session sequelize
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
@@ -24,6 +25,7 @@ store.sync();
 // body parser for forms
 const bodyParser = require("body-parser");
 const { where } = require("sequelize");
+const { application } = require("express");
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -77,7 +79,39 @@ app.get("/buy", authenticate, (req, res) => {
   res.render("pages/buy", { user });
 });
 
-// log in post route -- actually checks to see if that user exists in the database.
+/// Post routes -- adding users to the Customers database and checking against that database.
+
+// Sign up post route -- adds a new user to the Customers database.
+
+app.post("/signup", (req, res) => {
+  const { email, username, password, paymentinfo, address } = req.body;
+  if (!email.includes("@")) {
+    res.status(400).send("Please enter a valid email.");
+    return;
+    // later, we should have a modal that pops up and says something like
+    // "I know what emails are. Enter one."
+  }
+  if (!username || !password || !paymentinfo || !address) {
+    res.status(400).send("Please fill all rows.");
+    return;
+  }
+  // detect for repeats later
+
+  bcrypt.hash(password, 10, async (err, hash) => {
+    Customers.create({
+      email,
+      username,
+      password: hash,
+      paymentinfo,
+      address,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    });
+  });
+  res.status(200).send(`User ${username} added.`);
+});
+
+// Log in post route -- actually checks to see if that user exists in the database.
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
   const user = await Customers.findOne({
@@ -109,9 +143,9 @@ app.post("/logout", (res, req) => {
 });
 
 /// Product pages! Every page will be based on a similar ejs template, but be passed different data from the Products database.
-/// The data from the Products database is currently contained in the 'Products' variable. I'll pass it to each page as the "trinkets" variable.
-/// This way the ejs files can all loop through the trinkets variable without any renaming between pages.
-/// (Also I'm passing a lil Tasha quip to each page)
+// The data from the Products database is currently contained in the 'Products' variable. I'll pass it to each page as the "trinkets" variable.
+// This way the ejs files can all loop through the trinkets variable without any renaming between pages.
+// (Also I'm passing a lil Tasha quip to each page)
 
 // Armor page. I'll move the bracers and cloaks over here.
 app.get("/products/armor", async (req, res) => {
