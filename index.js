@@ -55,6 +55,10 @@ app.get("/login", (req, res) => {
   res.render("pages/login");
 });
 
+app.get("/signup", (req, res) => {
+  res.render("pages/signUp");
+});
+
 app.get("/account", authenticate, (req, res) => {
   user = req.session.user;
   res.render("pages/account", { user });
@@ -73,7 +77,7 @@ app.get("/buy", authenticate, (req, res) => {
   res.render("pages/buy", { user });
 });
 
-// log in
+// log in post route -- actually checks to see if that user exists in the database.
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
   const user = await Customers.findOne({
@@ -127,28 +131,74 @@ app.get("/products/armor", async (req, res) => {
 });
 
 // Foci page
-app.get("/products/foci", (req, res) => {
-  res.render("pages/products/foci");
+app.get("/products/foci", async (req, res) => {
+  // get only the products that are armor
+
+  let trinkets = await Products.findAll({
+    where: {
+      [Op.or]: [{ type: "Rod" }, { type: "Staff" }, { type: "Wand" }],
+    },
+  });
+
+  let quip = "My Demonomicon is not for sale. These will have to do for you.";
+  res.render("pages/products/foci", { trinkets, quip });
 });
 
 // Potions page
-app.get("/products/potions", (req, res) => {
-  res.render("pages/products/potions");
+app.get("/products/potions", async (req, res) => {
+  // get only the products that are armor
+
+  let trinkets = await Products.findAll({
+    where: {
+      type: "Potion",
+    },
+  });
+
+  let quip =
+    "At least one of these is poisoned. I'm sure I labeled it as such.";
+  res.render("pages/products/potions", { trinkets, quip });
 });
 
 // Rings page
-app.get("/products/rings", (req, res) => {
-  res.render("pages/products/rings");
+app.get("/products/rings", async (req, res) => {
+  // get only the products that are armor
+
+  let trinkets = await Products.findAll({
+    where: {
+      type: "Ring",
+    },
+  });
+
+  let quip = "A dozen fingers, and not one for me...";
+  res.render("pages/products/rings", { trinkets, quip });
 });
 
 // Weapons page
-app.get("/products/weapons", (req, res) => {
-  res.render("pages/products/weapons");
+app.get("/products/weapons", async (req, res) => {
+  // get only the products that are armor
+
+  let trinkets = await Products.findAll({
+    where: {
+      type: { [Op.startsWith]: "Weapon" },
+    },
+  });
+
+  let quip = "Don't cut yourself. At least not in my store.";
+  res.render("pages/products/weapons", { trinkets, quip });
 });
 
 // woundrousItems page
-app.get("/products/wondrous-items", (req, res) => {
-  res.render("pages/products/woundrousItems");
+app.get("/products/wondrous_items", async (req, res) => {
+  // get only the products that are armor
+
+  let trinkets = await Products.findAll({
+    where: {
+      type: "Wondrous item",
+    },
+  });
+
+  let quip = "Now these are trinkets.";
+  res.render("pages/products/wondrousItems", { trinkets, quip });
 });
 
 // listen
