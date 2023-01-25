@@ -16,10 +16,12 @@ module.exports = (sequelize, DataTypes) => {
   }
   Products.init(
     {
+      slug: DataTypes.STRING,
       name: DataTypes.STRING,
-      description: DataTypes.STRING,
+      type: DataTypes.STRING,
+      desc: DataTypes.TEXT,
       rarity: DataTypes.STRING,
-      imagelink: DataTypes.STRING,
+      requires_attunement: DataTypes.STRING,
     },
     {
       sequelize,
