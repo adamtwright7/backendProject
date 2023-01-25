@@ -6,11 +6,11 @@ body{
     background-repeat: no-repeat;
     
 }
-.box{
+.logIn{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 126vh;
+    min-height: 101vh;
 }
 .container{
     width: 350px;
@@ -19,11 +19,8 @@ body{
     flex-direction: column;
     padding: 0 15px 0 15px;
     background-color:rgba(255,255,255,0.7) ;
-    height: 278px;
+    height: 277px;
     border-radius: 30px;
-    max-height: 278px;
-    transition: max-height 0.5s;
-    overflow: hidden;
     
 }
 
@@ -83,3 +80,10 @@ form{
     gap: 5px;
 }
 
+.member{
+    color:rgb(31,14,53,0.7)
+}
+.memberLabel{
+    text-align: center;
+    padding-left: 80px;
+}
