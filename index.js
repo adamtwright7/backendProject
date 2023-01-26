@@ -82,20 +82,34 @@ app.get("/buy", authenticate, (req, res) => {
 /// Post routes -- adding users to the Customers database and checking against that database.
 
 // Sign up post route -- adds a new user to the Customers database.
-
-app.post("/signup", (req, res) => {
+app.post("/signup", async (req, res) => {
   const { email, username, password, paymentinfo, address } = req.body;
+
+  // Detect non-emails
   if (!email.includes("@")) {
     res.status(400).send("Please enter a valid email.");
     return;
     // later, we should have a modal that pops up and says something like
     // "I know what emails are. Enter one."
   }
+
+  // Detect empty fields
   if (!username || !password || !paymentinfo || !address) {
     res.status(400).send("Please fill all rows.");
     return;
   }
-  // detect for repeats later
+
+  // Detect repeat users
+  const user = await Customers.findOne({
+    where: {
+      [Op.or]: [{ email }, { username }],
+    },
+  });
+  if (user) {
+    // res.send("This user already exists. Login instead."); <-- this should be a modal
+    res.redirect("/login");
+    return;
+  }
 
   bcrypt.hash(password, 10, async (err, hash) => {
     Customers.create({
@@ -124,7 +138,7 @@ app.post("/login", async (req, res) => {
     res.status(400).send("Username not found");
     return;
   }
-  if (user.password === req.body.password) {
+  if (password === req.body.password) {
     // add a session that stores user data
     req.session.user = user.dataValues;
     console.log(req.session.user);
