@@ -1,0 +1,116 @@
+body{
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/753/719/749/artwork-digital-art-concept-art-dungeons-and-dragons-wallpaper-preview.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+}
+.logIn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 112vh;
+}
+.container{
+    width: 350px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 0 15px;
+    background-color:rgba(255,255,255,0.7) ;
+    height: 622px;
+    border-radius: 30px;
+}
+
+header{
+    display: flex;
+    font-size: 30px; 
+    justify-content: center;
+    padding: 10px 0 10px 0;
+}
+.input-field .input{
+    gap: 10px;
+    margin-top: 5px;
+    height: 45px;
+    width: 87%;
+    border: none;
+    border-radius: 30px;
+    color: rgb(31,14,53);
+    font-size: 15px;
+    padding: 0 0 0 45px;
+    background: rgba(255,255,255,0.5);
+    outline: none;
+}
+i{
+    position: relative;
+    top: -33px;
+    left: 17px;
+    color: #fff;
+}
+::-webkit-input-placeholder{
+    color: rgb(31,14,53);
+}
+.submit{
+    border: none;
+    margin-top: 5px;
+    border-radius: 30px;
+    font-size: 15px;
+    height: 45px;
+    outline: none;
+    width: 50%;
+    color: black;
+    background-color: rgb(31,14,53,0.7) ;
+    cursor: pointer;
+    transition: .3s ;
+}
+.submit:hover{
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
+label a{
+    text-decoration: none;
+    color: #fff;
+}
+.input-field{
+    gap: 10px;
+}
+form{
+    gap: 5px;
+}
+
+.member{
+    color:rgb(31,14,53,0.7)
+}
+.memberLabel{
+    text-align: center;
+    padding-left: 80px;
+}
+
+.updateButton{
+    border: none;
+    margin-top: 5px;
+    border-radius: 30px;
+    font-size: 15px;
+    height: 25px;
+    outline: none;
+    width: 100%;
+    color: black;
+    background-color: rgba(63, 136, 88, 0.7) ;
+    cursor: pointer;
+    transition: .3s ;
+}
+
+.deleteAccount{
+    border: none;
+    margin-top: 5px;
+    border-radius: 30px;
+    font-size: 15px;
+    height: 45px;
+    outline: none;
+    width: 50%;
+    color: black;
+    background-color: rgba(231, 14, 14, 0.7) ;
+    cursor: pointer;
+    transition: .3s ;
+}

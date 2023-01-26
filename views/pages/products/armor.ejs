@@ -1,14 +1,47 @@
-check out these cool products
-<br />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+       <%= quip %>
+       <% trinkets.forEach(item => { %>
+        <div class="mainWeaponBox">
+          <div class="weaponCard">
+              <div class="weaponPic">
+                  <img class = "weaponPic" src="https://www.aidedd.org/dnd/images-om/oathbow.jpg" alt="">
+                  <div class="rare">
+                      <h3><%= item.rarity %></h3>
+                            <%= item.name %> 
+                      <div class="description">
+                        <%= item.desc %>   
+                      </div>
+                  </div>
+              </div>
+          </div>
+    <% }) %>
 
-<%= quip %>
-<br />
-<% trinkets.forEach(item => { %>
-<br />
-<%= item.name %> <%= item.desc %> <%= item.rarity %>
-<br />
 
-<img src= "https://www.aidedd.org/dnd/images-om/${<%= item.slug %>}.jpg" alt="" />
 
-<br />
-<% }) %>
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
