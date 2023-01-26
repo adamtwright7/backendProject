@@ -1,3 +1,8 @@
+*{
+    font-family: 'Teko', sans-serif;
+    font-size: 20px;
+
+}
 body{
     background-image: url("https://c4.wallpaperflare.com/wallpaper/753/719/749/artwork-digital-art-concept-art-dungeons-and-dragons-wallpaper-preview.jpg");
     background-size: cover;
@@ -19,7 +24,7 @@ body{
     flex-direction: column;
     padding: 0 15px 0 15px;
     background-color:rgba(255,255,255,0.7) ;
-    height: 662px;
+    height: 700px;
     border-radius: 30px;
 }
 

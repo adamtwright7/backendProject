@@ -4,29 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  
+    <title>Armor</title>
+      <link rel="stylesheet" href="../style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="mainWeaponBox">
-        <div class="weaponCard">
-            <div class="weaponPic">
-                <img src="https://www.aidedd.org/dnd/images-om/oathbow.jpg" alt="">
-                <div class="rare">
-                    <h3>rarity : Very Rare</h3>
-
-                    <div class="description">
-                        <p>      "Weapon (longbow), very rare (requires attunement)",
-                            "When you nock an arrow on this bow, it whispers in Elvish, \"Swift defeat to my enemies.\" When you use this weapon to make a ranged attack, you can, as a command phrase, say, \"Swift death to you who have wronged me.\" The target of your attack becomes your sworn enemy until it dies or until dawn seven days later. You can have only one such sworn enemy at a time. When your sworn enemy dies, you can choose a new one after the next dawn.",
-                            "When you make a ranged attack roll with this weapon against your sworn enemy, you have advantage on the roll. In addition, your target gains no benefit from cover, other than total cover, and you suffer no disadvantage due to long range. If the attack hits, your sworn enemy takes an extra 3d6 piercing damage.",
-                            "While your sworn enemy lives, you have disadvantage on attack rolls with all other weapons."      "Weapon (longbow), very rare (requires attunement)",
-                            "When you nock an arrow on this bow, it whispers in Elvish, \"Swift defeat to my enemies.\" When you use this weapon to make a ranged attack, you can, as a command phrase, say, \"Swift death to you who have wronged me.\" The target of your attack becomes your sworn enemy until it dies or until dawn seven days later. You can have only one such sworn enemy at a time. When your sworn enemy dies, you can choose a new one after the next dawn.",
-                            "When you make a ranged attack roll with this weapon against your sworn enemy, you have advantage on the roll. In addition, your target gains no benefit from cover, other than total cover, and you suffer no disadvantage due to long range. If the attack hits, your sworn enemy takes an extra 3d6 piercing damage.",
-                            "While your sworn enemy lives, you have disadvantage on attack rolls with all other weapons."</p>
-                    </div>
-                </div>
-            </div>
+    <%- include('../../partials/navbar'); %>
+    <main>
+        <div class="quip">
+            <%= quip %>
         </div>
-    </div>
-    
+       
+        <div class="mainWeaponBox">
+            <% trinkets.forEach(item => { %>
+          <div class="weaponCard">
+              <div class="weaponPic">
+                  <img class = "weaponPic" src= <%= "https://www.aidedd.org/dnd/images-om/".concat(item.slug,".jpg") %> alt="">
+                  <div class="rare">
+                      <h3><%= item.rarity %></h3>
+                            <%= item.name %> 
+                      <div class="description">
+                        <%= item.desc %>   
+                      </div>
+                  </div>
+              </div>
+          </div>
+    <% }) %>
 </body>
 </html>

@@ -7,17 +7,22 @@
   
     <title>Armor</title>
       <link rel="stylesheet" href="../style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
 </head>
 <body>
+    <%- include('../../partials/navbar'); %>
     <main>
         <div class="quip">
             <%= quip %>
         </div>
-       <% trinkets.forEach(item => { %>
+       
         <div class="mainWeaponBox">
+            <% trinkets.forEach(item => { %>
           <div class="weaponCard">
               <div class="weaponPic">
-                  <img class = "weaponPic" src="https://www.aidedd.org/dnd/images-om/oathbow.jpg" alt="">
+                  <img class = "weaponPic" src= <%= "https://www.aidedd.org/dnd/images-om/".concat(item.slug,".jpg") %> alt="">
                   <div class="rare">
                       <h3><%= item.rarity %></h3>
                             <%= item.name %> 
@@ -28,10 +33,6 @@
               </div>
           </div>
     <% }) %>
-
-
-
-  
 </body>
 </html>
 
