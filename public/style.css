@@ -225,3 +225,44 @@ ul{
 .middleHeadPic{
     grid-area: header;
 }
+
+/* Cart */
+.userGreeting{
+    align-items: center;
+    text-align: center;
+}
+.helloGreeting{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    align-content: center
+    ;
+}
+.itemPic{
+    display: flex;
+}
+.itemPic img{
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+.container{
+    height: auto;
+    align-items: center;
+    align-content: center;
+}
+.removeButton{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    align-content: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.itemName{
+    text-align: center;
+}
