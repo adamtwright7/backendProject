@@ -10,12 +10,12 @@
   <body>
     <div class="logIn">
       <div id="container" class="container">
-        <div class="modalRepeat">
-            <p>You are a repeat User </p>
+        
+        <% if (typeof modal !== 'undefined'){ %>
+        <div class="modal">
+            <p> <%= modal %> </p>
           </div>
-          <div class="modalEmpty">
-            <p>Empty field must fill out all.</p>
-          </div>
+          <% }%>
         <div class="top">
           <header>Sign Up</header>
           <label class="memberLabel" for="">Already a Member? <a class = "member"href = "/login">Click here</a></label>
@@ -48,7 +48,7 @@
 </body>
 <script>
   // Get the modal
-var modalRepeat = document.getElementById("modalRepeat");
+const modalRepeat = document.getElementById("modalRepeat");
 
 // When the user clicks on the button, open the modal
 btn.onclick = function() {

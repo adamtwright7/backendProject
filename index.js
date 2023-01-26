@@ -87,15 +87,13 @@ app.post("/signup", async (req, res) => {
 
   // Detect non-emails
   if (!email.includes("@")) {
-    res.status(400).send("Please enter a valid email.");
+    res.render("pages/signup", { modal: "Enter a valid email." });
     return;
-    // later, we should have a modal that pops up and says something like
-    // "I know what emails are. Enter one."
   }
 
   // Detect empty fields
   if (!username || !password || !paymentinfo || !address) {
-    res.status(400).send("Please fill all rows.");
+    res.render("pages/signup", { modal: "Fill all fields." });
     return;
   }
 
@@ -106,8 +104,9 @@ app.post("/signup", async (req, res) => {
     },
   });
   if (user) {
-    // res.send("This user already exists. Login instead."); <-- this should be a modal
-    res.redirect("/login");
+    res.render("pages/signup", {
+      modal: "You already have an account. Log in instead.",
+    });
     return;
   }
 
@@ -122,38 +121,45 @@ app.post("/signup", async (req, res) => {
       updatedAt: new Date(),
     });
   });
-  res.status(200).send(`User ${username} added.`);
-  // Should redirect to log in later.
+  res.render("pages/login", { modal: "Account created! Now log in." });
 });
 
 // Log in post route -- actually checks to see if that user exists in the database.
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
+  // getting the user from the database
   const user = await Customers.findOne({
     where: {
       username: username,
     },
   });
+  // checking username
   if (!user) {
-    res.status(400).send("Username not found");
+    res.render("pages/login", { modal: "Username not found." });
     return;
   }
-  if (password === req.body.password) {
-    // add a session that stores user data
+  // comparing passwords
+  bcrypt.compare(password, user.password, (err, result) => {
+    if (err) {
+      res.render("pages/login", { modal: "Server error. Please try again." });
+      return;
+    }
+    if (!result) {
+      // result will be true if the passwords match
+      res.render("pages/login", { modal: "Incorrect password. Try again." });
+      return;
+    }
+    // If we're here, the passwords match. Add a session that stores user data and send them to the account page.
     req.session.user = user.dataValues;
-    console.log(req.session.user);
-    res.redirect("/account");
-    return;
-  } else {
-    res.status(400).send("incorrect username or password");
-  }
+    res.render("pages/account");
+  });
 });
 
 // log out
 app.post("/logout", (res, req) => {
   if (req.session) {
     req.session.destroy();
-    res.redirect("/pages/login");
+    res.redirect("/pages/login", { modal: "Logged out." });
   }
 });
 

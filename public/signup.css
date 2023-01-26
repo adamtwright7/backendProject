@@ -1,134 +1,103 @@
-body{
-    background-image: url("https://techraptor.net/sites/default/files/images/D%26D%20MoM%20Alternate%20Races.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    
+body {
+  background-image: url("https://techraptor.net/sites/default/files/images/D%26D%20MoM%20Alternate%20Races.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
-.logIn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 125vh;
+.logIn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 125vh;
 }
-.container{
-    width: 350px;
-    gap: 10px;
-    display: flex;
-    flex-direction: column;
-    padding: 0 15px 0 15px;
-    background-color:rgba(255,255,255,0.7) ;
-    height: 477px;
-    border-radius: 30px;
-}
-
-header{
-    display: flex;
-    font-size: 30px; 
-    justify-content: center;
-    padding: 10px 0 10px 0;
-}
-.input-field .input{
-    gap: 10px;
-    margin-top: 5px;
-    height: 45px;
-    width: 87%;
-    border: none;
-    border-radius: 30px;
-    color: rgb(31,14,53);
-    font-size: 15px;
-    padding: 0 0 0 45px;
-    background: rgba(255,255,255,0.5);
-    outline: none;
-}
-i{
-    position: relative;
-    top: -33px;
-    left: 17px;
-    color: #fff;
-}
-::-webkit-input-placeholder{
-    color: rgb(31,14,53);
-}
-.submit{
-    border: none;
-    margin-top: 5px;
-    border-radius: 30px;
-    font-size: 15px;
-    height: 45px;
-    outline: none;
-    width: 100%;
-    color: black;
-    background-color: rgb(31,14,53,0.7) ;
-    cursor: pointer;
-    transition: .3s ;
-}
-.submit:hover{
-    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+.container {
+  width: 350px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px 0 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  height: 477px;
+  border-radius: 30px;
 }
 
-label a{
-    text-decoration: none;
-    color: #fff;
+header {
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  padding: 10px 0 10px 0;
 }
-.input-field{
-    gap: 10px;
+.input-field .input {
+  gap: 10px;
+  margin-top: 5px;
+  height: 45px;
+  width: 87%;
+  border: none;
+  border-radius: 30px;
+  color: rgb(31, 14, 53);
+  font-size: 15px;
+  padding: 0 0 0 45px;
+  background: rgba(255, 255, 255, 0.5);
+  outline: none;
 }
-form{
-    gap: 5px;
+i {
+  position: relative;
+  top: -33px;
+  left: 17px;
+  color: #fff;
+}
+::-webkit-input-placeholder {
+  color: rgb(31, 14, 53);
+}
+.submit {
+  border: none;
+  margin-top: 5px;
+  border-radius: 30px;
+  font-size: 15px;
+  height: 45px;
+  outline: none;
+  width: 100%;
+  color: black;
+  background-color: rgb(31, 14, 53, 0.7);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.submit:hover {
+  box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
 }
 
-.member{
-    color:rgb(31,14,53,0.7)
+label a {
+  text-decoration: none;
+  color: #fff;
 }
-.memberLabel{
-    text-align: center;
-    padding-left: 80px;
+.input-field {
+  gap: 10px;
+}
+form {
+  gap: 5px;
+}
+
+.member {
+  color: rgb(31, 14, 53, 0.7);
+}
+.memberLabel {
+  text-align: center;
+  padding-left: 80px;
 }
 /* modal */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  .modalRepeat {
-    display: none;
-    
-    width:80%;
-    background-color: rgb(206,38,28,0.7);
-    margin: auto;
-    padding: 20px;
-    border: none;
-    border-radius: 30px;
-    height: 6px;
-    align-items: center;
-    align-content: center;
-    text-align: center;
-    justify-content: center;
-  }
 
-  .modalEmpty {
-    display: none;
-    
-    width:80%;
-    background-color: rgb(206,38,28,0.7);
-    margin: auto;
-    padding: 20px;
-    border: none;
-    border-radius: 30px;
-    height: 6px;
-    align-items: center;
-    align-content: center;
-    text-align: center;
-    justify-content: center;
-  }
+.modal {
+  display: flex;
+  width: 80%;
+  background-color: rgb(206, 38, 28, 0.7);
+  margin: auto;
+  padding: 20px;
+  border: none;
+  border-radius: 30px;
+  height: 6px;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+}
