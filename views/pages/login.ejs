@@ -8,6 +8,7 @@
     <title id="title">login</title>
   </head>
   <body>
+    <%- include('../partials/navbar'); %>
     <div class="logIn">
       <div id="container" class="container">
         
@@ -20,50 +21,20 @@
           <header>Login</header>
           <label class="memberLabel" for="">Not A Member? <a class = "member"href = "/signUp">Click here</a></label>
         </div>
-        <div class="input-field">
-          <input class="input" placeholder="Username" id="" />
-        </div>
-        <div class="input-field">
-          <input class="input" placeholder="Password" id="" />
-        </div>
-        <div class="input-field">
-            <button type="submit"  id = "signInForm" class="submit" value="Login">Login</button>
-        </div>
+        <form action="/login" method="post">
+          <div class="input-field">
+            <input class="input" name="username" placeholder="Username" id="" />
+          </div>
+          <div class="input-field">
+            <input class="input" name="password" placeholder="Password" id="" />
+          </div>
+          <div class="input-field">
+            <button type="submit" id = "signInForm" class="submit" value="Login">Login</button>
+          </div>
+        </form>
       </div>
     </div>
   </form>
 </div>  
 </body>
-<script>
-  // Get the modal
-var modalinvalid = document.getElementById("modalRepeat");
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modalinvalid.style.display = "flex";
-  modalinvalid.style.height = "316px"
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modalinvalid) {
-    modalinvalid.style.display = "none";
-  }
-}
-
-var modalEmpty = document.getElementById("modalRepeat");
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modalEmpty.style.display = "flex";
-  modalEmpty.style.height = "316px"
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modalEmpty) {
-    modalEmpty.style.display = "none";
-  }
-}
-</script>
 </html>

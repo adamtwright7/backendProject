@@ -44,7 +44,7 @@ const authenticate = (req, res, next) => {
   if (req.session.user) {
     next(); // like a return statement for Middlewear
   } else {
-    res.redirect("/login");
+    res.render("/login", { modal: "Log in first." });
   }
 };
 
@@ -62,21 +62,18 @@ app.get("/signup", (req, res) => {
 });
 
 app.get("/account", authenticate, (req, res) => {
-  user = req.session.user;
-  res.render("pages/account", { user });
+  res.render("pages/account", { user: req.session.user });
 });
 
 // Cart page. Populated with user data
 app.get("/cart", (req, res) => {
-  user = req.session.user;
-  res.render("pages/cart", { user });
+  res.render("pages/cart", { user: req.session.user });
 });
 
 // Buy page. Requires you to have payment information. But it's basically just like "sorry Tasha doesn't deliver here."
 // Later, we can make a different authentication function that triggers a pop-up telling you that you need to have payment information to buy stuff.
 app.get("/buy", authenticate, (req, res) => {
-  user = req.session.user;
-  res.render("pages/buy", { user });
+  res.render("pages/buy", { user: req.session.user });
 });
 
 /// Post routes -- adding users to the Customers database and checking against that database.
