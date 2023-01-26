@@ -1,4 +1,14 @@
+*{
+    font-family: 'Teko', sans-serif;
 
+}
+body{
+    background-image: url("https://img.myloview.com/stickers/vintage-paper-texture-background-grunge-old-retro-rustic-cardboard-brown-empty-blank-space-page-with-fiber-pattern-of-kraft-paper-for-text-creative-backdrop-wallpaper-400-238275219.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
 
 #navBarLogo{
 background-image: linear-gradient(to top, rgb(31,14,53) 0%, rgb(210,125,235) 100%);
@@ -8,7 +18,8 @@ background-image: linear-gradient(to top, rgb(31,14,53) 0%, rgb(210,125,235) 100
 -moz-text-fill-color: transparent;
 display: flex;
 align-items: center;
-font-size: 2.5rem;
+font-size: 27px;
+width: 200px;
 }
 
 .navBarItem{
@@ -67,7 +78,6 @@ font-size: 2.5rem;
 }
 
 .navBarMenu{
-    padding: 10px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -85,17 +95,21 @@ font-size: 2.5rem;
     display: contents
 }
 .accountNavLink{
-    color: black;
+    color: gold;
+    background-color: rgb(31,14,53);
     font-size: 1.5rem;
     align-items: center;
     text-decoration: none;
     padding: 0 1rem;
     height: 100%;
+    border-radius: 10px;
 }
 .accountNavMenu{
     align-items: center;
     list-style: none;
     text-align:right;
+    background-color: #222;
+    border: none;
 }
 
 
@@ -130,7 +144,7 @@ font-size: 2.5rem;
     flex-wrap: wrap;
     gap: 1rem;
     height: 100%;
-    background-image: url("https://img.freepik.com/premium-photo/rose-gold-marble-texture-background_38607-344.jpg");
+    width: 100%;
 }
 .weaponCard{
    max-width:300px;
@@ -138,6 +152,7 @@ font-size: 2.5rem;
    margin-top: 10px;
    overflow: hidden;
    overflow:auto;
+   margin-left: 5px;
    
 }
 .weaponCard::-webkit-scrollbar {
@@ -151,7 +166,62 @@ font-size: 2.5rem;
 }
 .rare{
     text-align: center;
+    font-size: 20px;
+}
+.quip{
+    text-align: center;
+    font-size: 40px;
+}
+body{
+    margin: 0;
+}
+ul{
+    margin: 0;
 }
 
 
-/* LOGIN PAGE CSS */
+/* home page css */
+.homeMain{
+    display: grid;
+    grid-template-areas:
+    "pic1 pic2"
+    "header header"
+    "pic3 pic4"
+}
+.slogan{
+    text-align: center;
+}
+
+.armors{
+    display: grid;
+    align-items: center;
+    text-align: left;
+    width: fit-content;
+}
+.armorsName{
+    padding-left: 192px;
+    font-size: 50px;
+    margin: 0;
+}
+.armorsPic{
+    width: 50%;
+    margin-left: 146px ;
+    border-radius: 20px;
+}
+.potionPic{
+    width: 50%;
+   margin-left: 146px ;
+    height: 218px;
+    border: none;
+    border-radius: 20px;
+}
+.potionName{
+    padding-left: 245px;
+    font-size: 50px;
+    margin: 0;
+    
+}
+
+.middleHeadPic{
+    grid-area: header;
+}

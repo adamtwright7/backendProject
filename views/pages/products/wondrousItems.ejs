@@ -1,11 +1,37 @@
-check out these cool products
-<br />
-
-<%= quip %>
-<br />
-<% trinkets.forEach(item => { %>
-<br />
-<%= item.name %> <%= item.desc %> <%= item.rarity %>
-
-<br />
-<% }) %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Armor</title>
+      <link rel="stylesheet" href="../style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+</head>
+<body>
+    <%- include('../../partials/navbar'); %>
+    <main>
+        <div class="quip">
+            <%= quip %>
+        </div>
+       
+        <div class="mainWeaponBox">
+            <% trinkets.forEach(item => { %>
+          <div class="weaponCard">
+              <div class="weaponPic">
+                  <img class = "weaponPic" src= <%= "https://www.aidedd.org/dnd/images-om/".concat(item.slug,".jpg") %> alt="">
+                  <div class="rare">
+                      <h3><%= item.rarity %></h3>
+                            <%= item.name %> 
+                      <div class="description">
+                        <%= item.desc %>   
+                      </div>
+                  </div>
+              </div>
+          </div>
+    <% }) %>
+</body>
+</html>
