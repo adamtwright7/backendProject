@@ -10,12 +10,12 @@
   <body>
     <div class="logIn">
       <div id="container" class="container">
-        <div class="modalinvalid">
-            <p>Email provided is invalid</p>
-          </div>
-          <div class="modalEmpty">
-            <p>Empty Field Username/Password</p>
-          </div>
+        
+        <% if (typeof modal !== 'undefined'){ %>
+          <div class="modal">
+              <p> <%= modal %> </p>
+            </div>
+            <% }%>
         <div class="top">
           <header>Login</header>
           <label class="memberLabel" for="">Not A Member? <a class = "member"href = "/signUp">Click here</a></label>
