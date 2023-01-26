@@ -8,6 +8,7 @@
     <title id="title">login</title>
   </head>
   <body>
+    <%- include('../partials/navbar'); %>
     <div class="logIn">
       <div id="container" class="container">
         
@@ -46,36 +47,4 @@
   </form>
 </div>  
 </body>
-<script>
-  // Get the modal
-const modalRepeat = document.getElementById("modalRepeat");
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modalRepeat.style.display = "flex";
-  modalRepeat.style.height = "527px"
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modalRepeat) {
-    modalRepeat.style.display = "none";
-  }
-}
-
-var modalEmpty = document.getElementById("modalRepeat");
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modalEmpty.style.display = "flex";
-  modalEmpty.style.height = "527px"
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modalEmpty) {
-    modalEmpty.style.display = "none";
-  }
-}
-</script>
 </html>

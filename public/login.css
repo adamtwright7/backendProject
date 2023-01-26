@@ -88,8 +88,7 @@ form {
 
 /* modal */
 .modal {
-  display: none;
-
+  display: flex;
   width: 80%;
   background-color: rgb(206, 38, 28, 0.7);
   margin: auto;
