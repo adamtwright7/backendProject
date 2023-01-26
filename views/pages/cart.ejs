@@ -1,6 +1,42 @@
-here's all the stuff in your order
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <title id="title">login</title>
+    <link rel="stylesheet" href="../style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <%- include('../partials/navbar'); %>
+    <div class="userGreeting">
+                <h1 class = helloGreting>Hello User</h1>
+            </div>
+    <div class="logIn">
+      <div id="container" class="container">
+            
+        <div class="top">
+          <header> Cart </header>
+        </div>
+        <div class="items">
+                <div class="itemName">
+                    <p> armor of the dragon</p>
 
-<br />
-
--Find all rows in the Orders table matching the current customer id. Then use
-the product ids from those rows to populate the cart page.
+                </div>
+            <div class="itemPic">
+                <img src="https://64.media.tumblr.com/5dedff276fa67a763429e61b67488b6f/tumblr_pxdjzjJsYc1yv8dvso1_640.jpg" alt="">
+                
+        </div>
+        <button class = removeButton>Remove Item</button>
+      </div>
+      <!-- put 2nd here -->
+    </div>
+    
+</div> 
+ 
+</body>
+</html>
