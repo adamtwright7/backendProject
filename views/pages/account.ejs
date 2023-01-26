@@ -1,1 +1,44 @@
-payment info and such
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="account.css" />
+    <title id="title">Account</title>
+  </head>
+  <body>
+    <div class="logIn">
+      <div id="container" class="container">
+        <div class="top">
+          <header>Account</header>
+          <label class="memberLabel" for="">Make changes to account here</label>
+        </div>
+        <form action="/signup" method="post">
+          <div class="input-field">
+            <input class="input" name="email" placeholder="Email" id="" /><button class = updateButton>Update</button>
+          </div>
+          <div class="input-field">
+            <input class="input" name="username" placeholder="Username" id="" /><button class = updateButton>Update</button>
+          </div>
+          <div class="input-field">
+            <input class="input" name="password" placeholder="Password" id="" /><button class = updateButton>Update</button>
+          </div>
+          <div class="input-field">
+            <label for="">Input your payement information below. All major credit cards and ancient wyrms of Toril accepted. Tasha's Trinkets delivers to Oerth, Toril, Krynn, Khorvaire, and Barovia. </label>
+            <input class="input" name="paymentinfo" placeholder="Payment Info" id="" /><button type="submit" class = updateButton>Update</button>
+          </div>
+          <div class="input-field">
+            <input class="input" name="address" placeholder="Address" id="" /><button type="submit" class = updateButton>Update</button>
+          </div>
+          <div class="input-field">
+            <button type="submit" id = "signInForm" class="submit" value="Login">Finalize</button><button type="submit" id = "deleteAccount" class="deleteAccount" value="DELETE">Delete account</button>
+          </div>          <div class="input-field">
+            <!-- <button type="submit" id = "deleteAccount" class="deleteAccount" value="DELETE">Delete account</button> -->
+          </div>
+        </form>
+      </div>
+    </div>
+  </form>
+</div>  
+</body>
