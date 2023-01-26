@@ -64,9 +64,40 @@ app.get("/account", authenticate, (req, res) => {
   res.render("pages/account", { user: req.session.user });
 });
 
+/// Cart routes ---------------------------------------------------------
+
+// When a user hits "add to cart" underneath an item, it sends them to this route with a '/?itemToAdd=' followed by the item's id.
+app.post("/addToCart", async (req, res) => {
+  let productId = req.query.itemToAdd; // snagged from the add to cart button, which is actually a form
+  let customerId = req.session.user.id; // snagged from the session information
+
+  // Creates a row in the orders table that links a customer to an item
+  Orders.create({
+    productId,
+    customerId,
+    createdAt: new Date(),
+  });
+});
+
 // Cart page. Populated with user data
-app.get("/cart", (req, res) => {
-  res.render("pages/cart", { user: req.session.user });
+app.get("/cart", async (req, res) => {
+  // Find all rows in the Orders table matching the current customer id.
+  let customerId = req.session.user.id;
+  let orders = await Orders.findAll({
+    where: { customerId },
+  });
+
+  // Then use the product ids from those rows to populate the cart page.
+
+  let trinkets = [];
+  for (let order of orders) {
+    currentTrinket = await Products.findOne({
+      where: { id: order.productId },
+    });
+    trinkets.push(currentTrinket);
+  }
+
+  res.render("pages/cart", { user: req.session.user, trinkets });
 });
 
 // Buy page. Requires you to have payment information. But it's basically just like "sorry Tasha doesn't deliver here."
@@ -75,7 +106,7 @@ app.get("/buy", authenticate, (req, res) => {
   res.render("pages/buy", { user: req.session.user });
 });
 
-/// Post routes -- adding users to the Customers database and checking against that database. -------------------------------------------------------------------
+/// Sign in/out/modify account routes -------------------------------------------------------------------
 
 // Sign up post route -- adds a new user to the Customers database.
 app.post("/signup", async (req, res) => {
@@ -333,8 +364,8 @@ app.get("/products/weapons", async (req, res) => {
   res.render("pages/products/weapons", { trinkets, quip });
 });
 
-// woundrousItems page
-app.get("/products/wondrous_items", async (req, res) => {
+// Woundrous Items page
+app.get("/products/wondrousitems", async (req, res) => {
   // get only the products that are armor
 
   let trinkets = await Products.findAll({
