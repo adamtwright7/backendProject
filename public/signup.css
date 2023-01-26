@@ -19,7 +19,7 @@ body{
     flex-direction: column;
     padding: 0 15px 0 15px;
     background-color:rgba(255,255,255,0.7) ;
-    height: 479px;
+    height: 477px;
     border-radius: 30px;
 }
 
@@ -86,3 +86,49 @@ form{
     text-align: center;
     padding-left: 80px;
 }
+/* modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  .modalRepeat {
+    display: none;
+    
+    width:80%;
+    background-color: rgb(206,38,28,0.7);
+    margin: auto;
+    padding: 20px;
+    border: none;
+    border-radius: 30px;
+    height: 6px;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .modalEmpty {
+    display: none;
+    
+    width:80%;
+    background-color: rgb(206,38,28,0.7);
+    margin: auto;
+    padding: 20px;
+    border: none;
+    border-radius: 30px;
+    height: 6px;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+  }

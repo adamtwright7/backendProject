@@ -87,3 +87,37 @@ form{
     text-align: center;
     padding-left: 80px;
 }
+
+
+/* modal */
+.modalinvalid {
+    display: none;
+    
+    width:80%;
+    background-color: rgb(206,38,28,0.7);
+    margin: auto;
+    padding: 20px;
+    border: none;
+    border-radius: 30px;
+    height: 6px;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .modalEmpty {
+    display: none;
+    
+    width:80%;
+    background-color: rgb(206,38,28,0.7);
+    margin: auto;
+    padding: 20px;
+    border: none;
+    border-radius: 30px;
+    height: 6px;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+  }
