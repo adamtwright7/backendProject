@@ -80,7 +80,7 @@ app.post("/removeFromCart", async (req, res) => {
   let customerId = req.session.user.id; // snagged from the session information
 
   // Destroys the row in the orders table that has this item
-  Orders.destroy({
+  await Orders.destroy({
     where: {
       productId,
       customerId,
@@ -88,7 +88,7 @@ app.post("/removeFromCart", async (req, res) => {
   });
 
   // Redirects the user to the last page they were on
-  res.redirect("back");
+  res.redirect("/cart");
 });
 
 // Cart page. Populated with user data
@@ -112,8 +112,8 @@ app.get("/cart", authenticate, async (req, res) => {
   res.render("pages/cart", { user: req.session.user, trinkets });
 });
 
-// Buy page. Requires you to have payment information. But it's basically just like "sorry Tasha doesn't deliver here."
-// Later, we can make a different authentication function that triggers a pop-up telling you that you need to have payment information to buy stuff.
+// Buy page. Right now, it's basically just a "sorry Tasha doesn't deliver here."
+// In a full application, it would delete your account if you were a guest, empty your cart, and perhaps keep a record of your order in a different database.
 app.get("/buy", authenticate, (req, res) => {
   res.render("pages/buy", { user: req.session.user });
 });
