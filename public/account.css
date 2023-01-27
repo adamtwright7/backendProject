@@ -79,6 +79,8 @@ label a{
 }
 .input-field{
     gap: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 form{
     gap: 5px;
@@ -131,4 +133,23 @@ form{
     background-color: rgba(231, 14, 14, 0.7) ;
     cursor: pointer;
     transition: .3s ;
+}
+
+.deleteAccountA{
+    border: none;
+    margin-top: 5px;
+    border-radius: 30px;
+    font-size: 15px;
+    height: 45px;
+    outline: none;
+    width: 100%;
+    color: black;
+    background-color: rgba(231, 14, 14, 0.7) ;
+    cursor: pointer;
+    transition: .3s ;
+}
+form{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
