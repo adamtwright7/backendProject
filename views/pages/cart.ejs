@@ -6,37 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="login.css" />
     <title id="title">login</title>
-    <link rel="stylesheet" href="../style.css">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teko&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <%- include('../partials/navbar'); %>
     <div class="userGreeting">
-                <h1 class = helloGreting>Hello User</h1>
-            </div>
+      <h1 class="helloGreting">Hello <%= user.username %> </h1>
+    </div>
     <div class="logIn">
       <div id="container" class="container">
-            
         <div class="top">
-          <header> Cart </header>
+          <header>Cart</header>
         </div>
         <div class="items">
-                <div class="itemName">
-                    <p> armor of the dragon</p>
-
-                </div>
-            <div class="itemPic">
-                <img src="https://64.media.tumblr.com/5dedff276fa67a763429e61b67488b6f/tumblr_pxdjzjJsYc1yv8dvso1_640.jpg" alt="">
-                
+          <% trinkets.forEach(item => { %>
+          <div class="weaponCard">
+            <div class="weaponPic">
+              <img class = "weaponPic" src= <%=
+              "https://www.aidedd.org/dnd/images-om/".concat(item.slug,".jpg")
+              %> alt="">
+              <div class="rare">
+                <h3><%= item.rarity %></h3>
+                <%= item.name %>
+                <div class="description"><%= item.desc %></div>
+                <form action= <%= "/addToCart/?itemToAdd=".concat(item.id) %>
+                  method="post" >
+                  <button class="removeButton">Remove Item</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <% }) %>
         </div>
-        <button class = removeButton>Remove Item</button>
       </div>
-      <!-- put 2nd here -->
     </div>
-    
-</div> 
- 
-</body>
+  </body>
 </html>
