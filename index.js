@@ -61,7 +61,7 @@ app.use("/products", productsRoutes);
 /// Cart routes ---------------------------------------------------------
 
 // When a user hits "add to cart" underneath an item, it sends them to this route with a '/?itemToAdd=' followed by the item's id.
-app.post("/addToCart", async (req, res) => {
+app.post("/addToCart", authenticate, async (req, res) => {
   let productId = req.query.itemToAdd; // snagged from the add to cart button, which is actually a form
   let customerId = req.session.user.id; // snagged from the session information
 
@@ -72,11 +72,26 @@ app.post("/addToCart", async (req, res) => {
     createdAt: new Date(),
   });
 
-  // I want to redirect the user to the last page their were on 
-  res.redirect('back');
+  // Redirects the user to the last page they were on
+  res.redirect("back");
 });
 
 // Remove from cart
+app.post("/removeFromCart", async (req, res) => {
+  let productId = req.query.productId; // snagged from the remove from cart button, which is actually a form
+  let customerId = req.session.user.id; // snagged from the session information
+
+  // Destroys the row in the orders table that has this item
+  Orders.destroy({
+    where: {
+      productId,
+      customerId,
+    },
+  });
+
+  // Redirects the user to the last page they were on
+  res.redirect("back");
+});
 
 // Cart page. Populated with user data
 app.get("/cart", authenticate, async (req, res) => {
