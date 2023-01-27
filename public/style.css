@@ -194,6 +194,7 @@ ul{
     "pic3 pic4"
 }
 .slogan{
+    font-size: 39px;
     text-align: center;
     background-image: url("https://elements-video-cover-images-0.imgix.net/files/9bb5a313-72f8-431e-a674-fb1f3e56b5ce/inline_image_preview.jpg?auto=compress&crop=edges&fit=crop&fm=jpeg&h=800&w=1200&s=9b8d4a5bf3d6265d428badc39bdafa05");
     color: gold;
@@ -201,7 +202,7 @@ ul{
     height: 5vh;
     align-items: center;
     place-content: center;
-    box-shadow: 0 0 50px 50px rgb(31,14,53)e ;
+    box-shadow: 20px 20px 50px 50px rgb(31,14,53) ;
 }
 
 .armors{
@@ -314,4 +315,80 @@ ul{
     
     height: 50px;
     border-radius: 10px;
+}
+#icon{
+    display: none;
+}
+.navWords{
+    height: 10px;
+    display: contents;
+}
+
+@media (max-width:500px){
+    body{
+        width: 100%;
+    }
+    .accountNavMenu{
+        padding-right: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 10px;
+        padding: 0;
+        align-items: center;
+        list-style: none;
+        text-align:right;
+        background-color: #222;
+        border: none;
+        text-align: center;
+    }
+    #navBarLogo{
+        background-image: linear-gradient(to top, rgb(31,14,53) 0%, rgb(210,125,235) 100%);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        display: flex;
+        align-items: center;
+        font-size: 27px;
+        width: 99px;
+        margin-left: 20px;
+        }
+        .navBarMenu{
+            width: 100%;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            list-style: none;
+            text-align:center
+          
+        }
+        .navBarLinks{
+            color: gold;
+            /* display: flex; */
+            font-size: 20px;
+            align-items: center;
+            text-decoration: none;
+            padding: 0 1rem;
+            height: 100%;
+            padding: 0;
+        
+        }
+        .slogan{
+            font-size: 30px;
+            text-align: center;
+            background-image: url("https://elements-video-cover-images-0.imgix.net/files/9bb5a313-72f8-431e-a674-fb1f3e56b5ce/inline_image_preview.jpg?auto=compress&crop=edges&fit=crop&fm=jpeg&h=800&w=1200&s=9b8d4a5bf3d6265d428badc39bdafa05");
+            color: gold;
+            margin: 0;
+            height: 5vh;
+            align-items: center;
+            place-content: center;
+            box-shadow: 20px 20px 50px 50px rgb(31,14,53) ;
+        }
+        .navWords{
+            display: none;
+            align-items: center;
+        }
+        #icon{
+            display: block;
+        }
 }
