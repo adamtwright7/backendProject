@@ -71,7 +71,12 @@ app.post("/addToCart", async (req, res) => {
     customerId,
     createdAt: new Date(),
   });
+
+  // I want to redirect the user to the last page their were on 
+  res.redirect('back');
 });
+
+// Remove from cart
 
 // Cart page. Populated with user data
 app.get("/cart", authenticate, async (req, res) => {
