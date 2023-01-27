@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../account.css" />
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teko&display=swap"
+      rel="stylesheet"
+    />
     <title id="title">Account</title>
   </head>
   <body>
@@ -18,7 +21,7 @@
           <header><%= user.username %>'s Account</header>
           <label class="memberLabel">Make changes to your account here</label>
         </div>
-        <form action="/modifyAccount" method="post">
+        <form action="account/modifyAccount" method="post">
           <div class="input-field">
             <input class="input" name="uemail" placeholder="Email" />
             <button type="submit" class="updateButton">Update</button>
@@ -46,13 +49,11 @@
         </form>
 
         <!-- delete account -->
-        <form action="/deleteAccount" method="post">
-          
-            <button type="submit" class="deleteAccountA">Delete account</button>
-          
+        <form action="account/deleteAccount" method="post">
+          <button type="submit" class="deleteAccountA">Delete account</button>
         </form>
         <!-- sign out -->
-        <form action="/logout" method="post">
+        <form action="account/logout" method="post">
           <button type="submit" class="signOut">Sign out</button>
         </form>
       </div>
