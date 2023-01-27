@@ -253,6 +253,7 @@ ul{
     margin-right: auto;
 }
 .container{
+    margin-bottom: 10px;
     padding-bottom: 5px;
     height: auto;
     align-items: center;
