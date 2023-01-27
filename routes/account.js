@@ -38,7 +38,7 @@ const authenticate = (req, res, next) => {
   }
 };
 
-/// Basic get routes --------------------------------------------------------------------------
+/// Basic get routes ----------------------------------------------------------------------------
 
 router.get("/login", (req, res) => {
   res.render("pages/login");
@@ -95,6 +95,31 @@ router.post("/signup", async (req, res) => {
     });
   });
   res.render("pages/login", { modal: "Account created! Now log in." });
+});
+
+// Log in as guest post route -- creates an account with guest data and logs you in.
+router.post("/guestLogIn", async (req, res) => {
+  let user = {};
+  user.email = "tasha@witch.queen";
+  user.username = "Iggwilv";
+  user.password = "Zybilna";
+  user.paymentinfo = "Demonomicon earnings";
+  user.address = "Palce of Heart's Desire";
+
+  user = await Customers.create({
+    email: user.email,
+    username: user.username,
+    password: user.password,
+    paymentinfo: user.paymentinfo,
+    address: user.address,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  });
+
+  console.log(user); // this user has to have an ID
+
+  req.session.user = user; // creates a session
+  res.redirect("/"); // send the user back home since they don't care about their account
 });
 
 // Log in post route -- actually checks to see if that user exists in the database.
@@ -214,11 +239,11 @@ router.post("/modifyAccount", async (req, res) => {
 
 // Delete account. This is a post route as well, to conform with forms.
 router.post("/deleteAccount", async (req, res) => {
-  console.log(req.session.user);
   const { username, password } = req.session.user;
   Customers.destroy({
     where: { username },
   });
+  req.session = null;
   res.redirect("/");
 });
 

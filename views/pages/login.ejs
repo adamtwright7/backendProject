@@ -35,10 +35,12 @@
           <div class="input-field">
             <button type="submit" id = "signInForm" class="submit" value="Login">Login</button>
           </div>
-          <div class="input-field">
-            <button type="submit" id = "signInForm" class="guest" value="Login">Sign in at guest</button>
-          </div>
         </form>
+          <div class="input-field">
+            <form action="/account/guestLogIn" method="post">
+            <button type="submit" id = "signInForm" class="guest" value="Login">Sign in as guest</button>
+            </form>
+          </div>
       </div>
     </div>
   </form>
