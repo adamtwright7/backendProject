@@ -13,7 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 73vh;
+  min-height: 79vh;
   
 }
 .container {
@@ -89,6 +89,20 @@ form {
 .memberLabel {
   text-align: center;
   
+}
+
+.guest{
+  border: none;
+  margin-top: 5px;
+  border-radius: 30px;
+  font-size: 15px;
+  height: 45px;
+  outline: none;
+  width: 100%;
+  color: black;
+  background-color: rgba(94, 21, 188, 0.7);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 /* modal */
