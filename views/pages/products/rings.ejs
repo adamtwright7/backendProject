@@ -21,6 +21,9 @@
         <div class="mainWeaponBox">
             <% trinkets.forEach(item => { %>
           <div class="weaponCard">
+            <div class="addToCartBox">
+                <button type = "submit" class = addToCart>Add to cart</button>
+                </div>
               <div class="weaponPic">
                   <img class = "weaponPic" src= <%= "https://www.aidedd.org/dnd/images-om/".concat(item.slug,".jpg") %> alt="">
                   <div class="rare">
