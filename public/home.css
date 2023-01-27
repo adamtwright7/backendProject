@@ -1,0 +1,15 @@
+.armorsHome{
+    width: 100%;
+}
+.homeMain{
+    width: 100%;
+}
+@media all and (max-width:500px){
+    body{
+        width: 390px;
+    }
+    #accountNavMenu{
+
+    }
+    
+}
