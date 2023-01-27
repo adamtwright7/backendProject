@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>Armor</title>
+    <title>Weapons</title>
       <link rel="stylesheet" href="../style.css">
       <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,9 @@
             <% trinkets.forEach(item => { %>
           <div class="weaponCard">
             <div class="addToCartBox">
-                <button type = "submit" class = addToCart>Add to cart</button>
+                <form action= <%= "/addToCart/?itemToAdd=".concat(item.id) %> method="post">
+                    <button type = "submit" class = addToCart>Add to cart</button>
+                </form>
                 </div>
               <div class="weaponPic">
                   <img class = "weaponPic" src= <%= "https://www.aidedd.org/dnd/images-om/".concat(item.slug,".jpg") %> alt="">
