@@ -22,11 +22,14 @@
     <div class="logIn">
       <div id="container" class="container">
         <div class="top">
-          <header>Cart</header>
+          <header>Your Cart</header>
         </div>
         <div class="items">
           <% trinkets.forEach(item => { %>
           <div class="weaponCard">
+            <form action= <%= "/removeFromCart/?productId=".concat(item.id) %> method="post" >
+                <button class="removeButton">Remove Item</button>
+              </form>
             <div class="weaponPic">
               <img class = "weaponPic" src= <%=
               "https://www.aidedd.org/dnd/images-om/".concat(item.slug,".jpg")
@@ -35,15 +38,12 @@
                 <h3><%= item.rarity %></h3>
                 <%= item.name %>
                 <div class="description"><%= item.desc %></div>
-                <form action= <%= "/addToCart/?itemToAdd=".concat(item.id) %>
-                  method="post" >
-                  <button class="removeButton">Remove Item</button>
-                </form>
               </div>
             </div>
           </div>
           <% }) %>
         </div>
+        <a href="/"><button class = "finalizeCart">Finalize purchase</button></a>
       </div>
     </div>
   </body>

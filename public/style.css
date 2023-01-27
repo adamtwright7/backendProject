@@ -20,21 +20,24 @@ display: flex;
 align-items: center;
 font-size: 27px;
 width: 200px;
+margin-left: 20px;
 }
 
 .navBarItem{
-    height: 80px;
+    height: 35px;
     width: 100%;  
 }
 
 .navBarLinks{
-    color: #F0EAD6;
-    display: flex;
+    color: gold;
+    /* display: flex; */
     font-size: 1.5rem;
     align-items: center;
     text-decoration: none;
     padding: 0 1rem;
     height: 100%;
+    padding: 0;
+
 }
 .mainContainer{
  justify-content: space-between;  
@@ -55,10 +58,10 @@ width: 200px;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
-    position: sticky;
+    /* position: sticky;
     top: 0;
-    left: 0;
-    z-index: 999;
+    left: 0; */
+    /* z-index: 999; */
 
 }
 
@@ -165,7 +168,6 @@ width: 200px;
 .weaponPic{
    max-width: 300px;
    max-height: 500px;
-   padding-top: 4px
 }
 .rare{
     text-align: center;
@@ -193,6 +195,13 @@ ul{
 }
 .slogan{
     text-align: center;
+    background-image: url("https://elements-video-cover-images-0.imgix.net/files/9bb5a313-72f8-431e-a674-fb1f3e56b5ce/inline_image_preview.jpg?auto=compress&crop=edges&fit=crop&fm=jpeg&h=800&w=1200&s=9b8d4a5bf3d6265d428badc39bdafa05");
+    color: gold;
+    margin: 0;
+    height: 5vh;
+    align-items: center;
+    place-content: center;
+    box-shadow: 0 0 50px 50px rgb(31,14,53)e ;
 }
 
 .armors{
@@ -254,13 +263,13 @@ ul{
 }
 .container{
     margin-bottom: 10px;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
     height: auto;
     align-items: center;
     align-content: center;
 }
 .removeButton{
-    width: 84px;
+    background-color: rgb(208, 38, 38);
     display: flex;
     align-items: center;
     text-align: center;
@@ -268,6 +277,12 @@ ul{
     align-content: center;
     margin-right: auto;
     margin-left: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    width: 23%;
+}
+.removeButton button{
+    text-align: center;
 }
 
 .itemName{
@@ -290,4 +305,13 @@ ul{
 }
 .addToCartBox{
     padding-top: 4px;
+}
+
+.finalizeCart{
+    font-size: 24px;
+    color: gold;
+    background-color: green;
+    
+    height: 50px;
+    border-radius: 10px;
 }
