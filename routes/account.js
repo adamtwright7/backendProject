@@ -99,26 +99,17 @@ router.post("/signup", async (req, res) => {
 
 // Log in as guest post route -- creates an account with guest data and logs you in.
 router.post("/guestLogIn", async (req, res) => {
-  let user = {};
-  user.email = "tasha@witch.queen";
-  user.username = "Iggwilv";
-  user.password = "Zybilna";
-  user.paymentinfo = "Demonomicon earnings";
-  user.address = "Palce of Heart's Desire";
-
   user = await Customers.create({
-    email: user.email,
-    username: user.username,
-    password: user.password,
-    paymentinfo: user.paymentinfo,
-    address: user.address,
+    email: "tasha@witch.queen",
+    username: "Iggwilv",
+    password: "Zybilna",
+    paymentinfo: "Demonomicon earnings",
+    address: "Palce of Heart's Desire",
     createdAt: new Date(),
     updatedAt: new Date(),
   });
 
-  console.log(user); // this user has to have an ID
-
-  req.session.user = user; // creates a session
+  req.session.user = user.dataValues; // creates a session
   res.redirect("/"); // send the user back home since they don't care about their account
 });
 
