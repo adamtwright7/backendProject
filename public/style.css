@@ -391,4 +391,23 @@ ul{
         #icon{
             display: block;
         }
+        .mainWeaponBox{
+            display:flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+        }
+        .weaponCard{
+            max-width:300px;
+            border: 2px solid black;
+            margin-top: 10px;
+            overflow: hidden;
+            overflow:auto;
+            margin-left: auto;
+            margin-right: auto;
+            align-items: center;
+            
+         }
 }
