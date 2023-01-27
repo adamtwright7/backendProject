@@ -145,6 +145,7 @@ width: 200px;
     gap: 1rem;
     height: 100%;
     width: 100%;
+    text-align: center;
 }
 .weaponCard{
    max-width:300px;
@@ -153,6 +154,7 @@ width: 200px;
    overflow: hidden;
    overflow:auto;
    margin-left: 5px;
+   align-items: center;
    
 }
 .weaponCard::-webkit-scrollbar {
@@ -163,6 +165,7 @@ width: 200px;
 .weaponPic{
    max-width: 300px;
    max-height: 500px;
+   padding-top: 4px
 }
 .rare{
     text-align: center;
@@ -177,20 +180,6 @@ body{
 }
 ul{
     margin: 0;
-}
-
-.addToCart{
-    width: 50%;
-    background-color: green;
-    height: 50px;
-    border-radius: 30px;
-    font-size: 20px;
-    border: none;
-
-}
-
-.addToCart:hover{
-    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -264,13 +253,16 @@ ul{
     margin-right: auto;
 }
 .container{
+    padding-bottom: 5px;
     height: auto;
     align-items: center;
     align-content: center;
 }
 .removeButton{
+    width: 84px;
     display: flex;
     align-items: center;
+    text-align: center;
     height: 40px;
     align-content: center;
     margin-right: auto;
@@ -281,6 +273,20 @@ ul{
     text-align: center;
 }
 
-.deleteAccountA{
+.addToCart{
     width: 50%;
+    background-color: green;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: none;
+    
+    
+}
+.addToCart:hover{
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+    cursor:grab;
+}
+.addToCartBox{
+    padding-top: 4px;
 }

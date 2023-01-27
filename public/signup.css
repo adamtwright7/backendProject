@@ -2,7 +2,7 @@
   font-family: 'Teko', sans-serif;
 
 }
-body {
+.body1 {
   background-image: url("https://techraptor.net/sites/default/files/images/D%26D%20MoM%20Alternate%20Races.jpg");
   background-size: cover;
   background-position: center;
@@ -14,6 +14,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 98vh;
+  height: fit-content;
 }
 .container {
   width: 350px;
@@ -87,7 +88,7 @@ form {
 }
 .memberLabel {
   text-align: center;
-  padding-left: 80px;
+ 
 }
 /* modal */
 
