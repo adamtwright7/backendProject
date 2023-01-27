@@ -19,8 +19,6 @@ app.use(
 );
 app.use(bodyParser.json());
 
-// const SequelizeStore = require("connect-session-sequelize")(session.Store);
-// const store = new SequelizeStore({ db: models.sequelize });
 app.use(
   cookieSession({
     name: "session",
