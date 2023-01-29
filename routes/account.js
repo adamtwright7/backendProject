@@ -78,7 +78,7 @@ router.post("/signup", async (req, res) => {
   });
   if (user) {
     res.render("pages/signup", {
-      modal: "You already have an account. Log in instead.",
+      modal: "There's already an account with that username or email.",
     });
     return;
   }
@@ -147,7 +147,7 @@ router.post("/login", async (req, res) => {
 // Modify account route. This is a post route, rather than a put route, because forms only allow get and post methods.
 router.post("/modifyAccount", async (req, res) => {
   const { uemail, uusername, upassword, upaymentinfo, uaddress } = req.body; // The information that the user put in on this page. u = updated
-  const { email, username, password, paymentinfo, address } = req.session.user; // The information that already exists of the user in the database (via the current session).
+  const { id, email, username, password, paymentinfo, address } = req.session.user; // The information that already exists of the user in the database (via the current session).
 
   // update the email. If the updated email exists and it's not equal to the existing email
   if (uemail && email !== uemail) {
@@ -158,7 +158,7 @@ router.post("/modifyAccount", async (req, res) => {
       },
       {
         where: {
-          email,
+          id,
         },
       }
     );
@@ -173,7 +173,7 @@ router.post("/modifyAccount", async (req, res) => {
       },
       {
         where: {
-          username,
+          id,
         },
       }
     );
@@ -188,7 +188,7 @@ router.post("/modifyAccount", async (req, res) => {
       },
       {
         where: {
-          paymentinfo,
+          id,
         },
       }
     );
@@ -203,13 +203,13 @@ router.post("/modifyAccount", async (req, res) => {
       },
       {
         where: {
-          address,
+          id,
         },
       }
     );
   }
 
-  // update password with bcrypt
+  // update password with bcrypt -- even if it is the same password as before (oops!). 
   if (upassword) {
     // update it in the database
     bcrypt.hash(upassword, 10, async (err, hash) => {
@@ -218,7 +218,7 @@ router.post("/modifyAccount", async (req, res) => {
           password: hash,
           updatedAt: new Date(),
         },
-        { where: { username } } // searches for the current username
+        { where: { id } } 
       );
     });
   }
@@ -230,9 +230,9 @@ router.post("/modifyAccount", async (req, res) => {
 
 // Delete account. This is a post route as well, to conform with forms.
 router.post("/deleteAccount", async (req, res) => {
-  const { username, password } = req.session.user;
+  const { id } = req.session.user;
   Customers.destroy({
-    where: { username },
+    where: { id },
   });
   req.session = null;
   res.redirect("/");
