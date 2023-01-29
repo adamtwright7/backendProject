@@ -27,7 +27,7 @@
         <div class="items">
           <% trinkets.forEach(item => { %>
           <div class="weaponCard">
-            <form action= <%= "/removeFromCart/?productId=".concat(item.id) %> method="post" >
+            <form action= <%= "/removeFromCart/?orderId=".concat(item.orderId) %> method="post" >
                 <button class="removeButton">Remove Item</button>
               </form>
             <div class="weaponPic">

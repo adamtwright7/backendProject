@@ -75,14 +75,14 @@ app.post("/addToCart", authenticate, async (req, res) => {
 });
 
 // Remove from cart
-app.post("/removeFromCart", async (req, res) => {
-  let productId = req.query.productId; // snagged from the remove from cart button, which is actually a form
-  let customerId = req.session.user.id; // snagged from the session information
+app.post("/removeFromCart", authenticate, async (req, res) => {
+  let orderId = req.query.orderId; // snagged from the remove from cart button, which is actually a form
+  let customerId = req.session.user.id; // snagged from the session information. Technically don't need this, but it makes me feel better :))
 
   // Destroys the row in the orders table that has this item
   await Orders.destroy({
     where: {
-      productId,
+      id: orderId,
       customerId,
     },
   });
@@ -106,6 +106,7 @@ app.get("/cart", authenticate, async (req, res) => {
     currentTrinket = await Products.findOne({
       where: { id: order.productId },
     });
+    currentTrinket.orderId = order.id; // tags each item in the cart with its unique ID on the Orders table so we can delete one at a time
     trinkets.push(currentTrinket);
   }
 
@@ -113,7 +114,7 @@ app.get("/cart", authenticate, async (req, res) => {
 });
 
 // Buy page. Right now, it's basically just a "sorry Tasha doesn't deliver here."
-// In a full application, it would delete your account if you were a guest, empty your cart, and perhaps keep a record of your order in a different database.
+// In a full application, it would empty your cart and perhaps keep a record of your order in a different database.
 app.get("/buy", authenticate, (req, res) => {
   res.render("pages/buy", { user: req.session.user });
 });
