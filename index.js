@@ -9,6 +9,9 @@ const bodyParser = require("body-parser");
 const { Customers, Orders, Products } = require("./sequelize/models"); // replace this with magic item data later
 const { Op } = require("sequelize"); // we're going to need some advanced querries
 const bcrypt = require("bcrypt"); // for hashing passwords
+const cors = require("cors")
+
+app.use(cors()) // allows any origin
 
 // connect session sequelize
 app.use(express.json());
