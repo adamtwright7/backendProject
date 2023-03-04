@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 3010;
 // importing stuff for sessions and cookies
 app.use(express.static(__dirname + "/public"));
 const session = require("express-session"); // for sessions

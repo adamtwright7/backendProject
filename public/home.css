@@ -1,20 +1,15 @@
-.armorsHome{
-    width: 100%;
+#homeImage {
+  margin: 20px auto;
+  height: 100%;
+  width: 100%;
 }
-.homeMain{
-    width: 100%;
-}
-@media all and (max-width:500px){
-    body{
-        width: 390px;
-    }
-    #accountNavMenu{
 
-    }
-    .armorsHome img{
-        height: 100%;
-        width: 100%
-        
-    }
-    
+@media all and (max-width: 500px) {
+  body {
+    width: 390px;
+  }
+  .homeMain img {
+    height: 100%;
+    width: 100%;
+  }
 }

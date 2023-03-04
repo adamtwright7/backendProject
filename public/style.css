@@ -1,200 +1,363 @@
-*{
-    font-family: 'Teko', sans-serif;
-
+* {
+  font-family: "Teko", sans-serif;
 }
-body{
-    background-image: url("https://img.myloview.com/stickers/vintage-paper-texture-background-grunge-old-retro-rustic-cardboard-brown-empty-blank-space-page-with-fiber-pattern-of-kraft-paper-for-text-creative-backdrop-wallpaper-400-238275219.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-}
-
-#navBarLogo{
-background-image: linear-gradient(to top, rgb(31,14,53) 0%, rgb(210,125,235) 100%);
--webkit-background-clip: text;
--moz-background-clip: text;
--webkit-text-fill-color: transparent;
--moz-text-fill-color: transparent;
-display: flex;
-align-items: center;
-font-size: 27px;
-width: 200px;
-margin-left: 20px;
+body {
+  background-image: url("https://img.myloview.com/stickers/vintage-paper-texture-background-grunge-old-retro-rustic-cardboard-brown-empty-blank-space-page-with-fiber-pattern-of-kraft-paper-for-text-creative-backdrop-wallpaper-400-238275219.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
-.navBarItem{
-    height: 35px;
-    width: 100%;  
+#navBarLogo {
+  background-image: linear-gradient(
+    to top,
+    rgb(31, 14, 53) 0%,
+    rgb(210, 125, 235) 100%
+  );
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  font-size: 27px;
+  width: 200px;
+  margin-left: 20px;
 }
 
-.navBarLinks{
+.navBarItem {
+  height: 35px;
+  width: 100%;
+}
+
+.navBarLinks {
+  color: gold;
+  /* display: flex; */
+  font-size: 1.5rem;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  padding: 0;
+}
+.mainContainer {
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+
+  border-radius: 15px;
+  box-sizing: 0 0 8px 8px black;
+}
+
+.navbar {
+  background: #222;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  /* position: sticky;
+    top: 0;
+    left: 0; */
+  /* z-index: 999; */
+}
+
+.navBarContainer {
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+  border-radius: 15px;
+  box-sizing: 0 0 8px 8px black;
+}
+
+.navBarMenu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+}
+/* account nav bar */
+.accountNavBar {
+  color: #f0ead6;
+  text-decoration: none;
+  align-content: right;
+}
+.accountNavItem {
+  display: contents;
+}
+.accountNavLink {
+  color: gold;
+  background-color: rgb(31, 14, 53);
+  font-size: 1.5rem;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  border-radius: 10px;
+}
+.accountNavMenu {
+  align-items: center;
+  list-style: none;
+  text-align: right;
+  background-color: #222;
+  border: none;
+}
+
+/* footer page */
+.footerMain {
+  position: fixed;
+  text-decoration: none;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: grey;
+  color: rgb(31, 14, 53);
+  text-align: left;
+}
+.footerItem {
+  list-style: none;
+  text-decoration: none;
+}
+.footerLink {
+  color: black;
+  font-size: 1.5rem;
+  align-items: left;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+}
+
+/* weapon page */
+.mainWeaponBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+.weaponCard {
+  max-width: 300px;
+  border: 2px solid black;
+  margin-top: 10px;
+  overflow: hidden;
+  overflow: auto;
+  margin-left: 5px;
+  align-items: center;
+}
+.weaponCard::-webkit-scrollbar {
+  display: none;
+}
+
+.weaponPic {
+  max-width: 300px;
+  max-height: 500px;
+}
+.rare {
+  text-align: center;
+  font-size: 20px;
+}
+.quip {
+  text-align: center;
+  font-size: 40px;
+}
+body {
+  margin: 0;
+}
+ul {
+  margin: 0;
+}
+
+/* home page css */
+.slogan {
+  font-size: 39px;
+  text-align: center;
+  background-image: url("https://elements-video-cover-images-0.imgix.net/files/9bb5a313-72f8-431e-a674-fb1f3e56b5ce/inline_image_preview.jpg?auto=compress&crop=edges&fit=crop&fm=jpeg&h=800&w=1200&s=9b8d4a5bf3d6265d428badc39bdafa05");
+  color: gold;
+  margin: 0;
+  align-items: center;
+  place-content: center;
+  box-shadow: 20px 20px 50px 50px rgb(31, 14, 53);
+}
+
+.armors {
+  display: grid;
+  align-items: center;
+  text-align: left;
+  width: fit-content;
+}
+.armorsName {
+  padding-left: 192px;
+  font-size: 50px;
+  margin: 0;
+}
+.armorsPic {
+  width: 50%;
+  margin-left: 146px;
+  border-radius: 20px;
+}
+.potionPic {
+  width: 50%;
+  margin-left: 146px;
+  height: 218px;
+  border: none;
+  border-radius: 20px;
+}
+.potionName {
+  padding-left: 245px;
+  font-size: 50px;
+  margin: 0;
+}
+
+.middleHeadPic {
+  grid-area: header;
+}
+
+/* Cart */
+.userGreeting {
+  align-items: center;
+  text-align: center;
+}
+.helloGreeting {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+}
+.itemPic {
+  display: flex;
+}
+.itemPic img {
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+.container {
+  margin-bottom: 10px;
+  padding-bottom: 15px;
+  height: auto;
+  align-items: center;
+  align-content: center;
+}
+.removeButton {
+  background-color: rgb(208, 38, 38);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 40px;
+  align-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  width: 23%;
+}
+.removeButton button {
+  text-align: center;
+}
+
+.itemName {
+  text-align: center;
+}
+
+.addToCart {
+  width: 50%;
+  background-color: green;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 20px;
+  border: none;
+}
+.addToCart:hover {
+  box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+  cursor: grab;
+}
+.addToCartBox {
+  padding-top: 4px;
+}
+
+.finalizeCart {
+  font-size: 24px;
+  color: gold;
+  background-color: green;
+
+  height: 50px;
+  border-radius: 10px;
+}
+#icon {
+  display: none;
+}
+.navWords {
+  height: 10px;
+  display: contents;
+}
+
+@media (max-width: 500px) {
+  body {
+    width: 100%;
+  }
+  .accountNavMenu {
+    padding-right: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 10px;
+    padding: 0;
+    align-items: center;
+    list-style: none;
+    text-align: right;
+    background-color: #222;
+    border: none;
+    text-align: center;
+  }
+  #navBarLogo {
+    background-image: linear-gradient(
+      to top,
+      rgb(31, 14, 53) 0%,
+      rgb(210, 125, 235) 100%
+    );
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    font-size: 27px;
+    width: 99px;
+    margin-left: 20px;
+  }
+  .navBarMenu {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+  }
+  .navBarLinks {
     color: gold;
     /* display: flex; */
-    font-size: 1.5rem;
+    font-size: 1rem;
     align-items: center;
     text-decoration: none;
     padding: 0 1rem;
     height: 100%;
     padding: 0;
-
-}
-.mainContainer{
- justify-content: space-between;  
- height: 80px; 
- z-index: 1;
- width: 100%;
- margin: 0 auto;
- 
- border-radius: 15px
-    ;
-    box-sizing: 0 0 8px 8px black ;
-}
-
-.navbar{
-    background:#222;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    /* position: sticky;
-    top: 0;
-    left: 0; */
-    /* z-index: 999; */
-
-}
-
-.navBarContainer{
-    position: sticky;
- display: flex;
- justify-content: space-between;  
- height: 80px; 
- z-index: 1;
- width: 100%;
- max-width: 1300px;
- margin: 0 auto;
- padding: 0 50px;
- border-radius: 15px
-    ;
-    box-sizing: 0 0 8px 8px black ;
-}
-
-.navBarMenu{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    list-style: none;
-    text-align:center
-}
-/* account nav bar */
-.accountNavBar{
-    color: #F0EAD6;
-    text-decoration: none;
-    align-content: right;
-    ;
-}
-.accountNavItem{
-    display: contents
-}
-.accountNavLink{
-    color: gold;
-    background-color: rgb(31,14,53);
-    font-size: 1.5rem;
-    align-items: center;
-    text-decoration: none;
-    padding: 0 1rem;
-    height: 100%;
-    border-radius: 10px;
-}
-.accountNavMenu{
-    align-items: center;
-    list-style: none;
-    text-align:right;
-    background-color: #222;
-    border: none;
-}
-
-
-
-/* footer page */
-.footerMain{
-    position: fixed;
-    text-decoration: none;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: grey;
-    color: rgb(31,14,53);
-    text-align: left;
-}
-.footerItem{
-    list-style: none;
-    text-decoration: none;
-}
-.footerLink{
-    color: black;
-    font-size: 1.5rem;
-    align-items: left;
-    text-decoration: none;
-    padding: 0 1rem;
-    height: 100%;
-}
-
-/* weapon page */
-.mainWeaponBox{
-    display:flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-}
-.weaponCard{
-   max-width:300px;
-   border: 2px solid black;
-   margin-top: 10px;
-   overflow: hidden;
-   overflow:auto;
-   margin-left: 5px;
-   align-items: center;
-   
-}
-.weaponCard::-webkit-scrollbar {
-    display: none;
-}
-
-
-.weaponPic{
-   max-width: 300px;
-   max-height: 500px;
-}
-.rare{
-    text-align: center;
-    font-size: 20px;
-}
-.quip{
-    text-align: center;
-    font-size: 40px;
-}
-body{
-    margin: 0;
-}
-ul{
-    margin: 0;
-}
-
-
-/* home page css */
-.homeMain{
-    display: grid;
-    grid-template-areas:
-    "pic1 pic2"
-    "header header"
-    "pic3 pic4"
-}
-.slogan{
-    font-size: 39px;
+  }
+  .slogan {
+    font-size: 30px;
     text-align: center;
     background-image: url("https://elements-video-cover-images-0.imgix.net/files/9bb5a313-72f8-431e-a674-fb1f3e56b5ce/inline_image_preview.jpg?auto=compress&crop=edges&fit=crop&fm=jpeg&h=800&w=1200&s=9b8d4a5bf3d6265d428badc39bdafa05");
     color: gold;
@@ -202,233 +365,51 @@ ul{
     height: 5vh;
     align-items: center;
     place-content: center;
-    box-shadow: 20px 20px 50px 50px rgb(31,14,53) ;
-}
-
-.armors{
-    display: grid;
-    align-items: center;
-    text-align: left;
-    width: fit-content;
-}
-.armorsName{
-    padding-left: 192px;
-    font-size: 50px;
-    margin: 0;
-}
-.armorsPic{
-    width: 50%;
-    margin-left: 146px ;
-    border-radius: 20px;
-}
-.potionPic{
-    width: 50%;
-   margin-left: 146px ;
-    height: 218px;
-    border: none;
-    border-radius: 20px;
-}
-.potionName{
-    padding-left: 245px;
-    font-size: 50px;
-    margin: 0;
-    
-}
-
-.middleHeadPic{
-    grid-area: header;
-}
-
-/* Cart */
-.userGreeting{
-    align-items: center;
-    text-align: center;
-}
-.helloGreeting{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    align-content: center
-    ;
-}
-.itemPic{
-    display: flex;
-}
-.itemPic img{
-    width: 150px;
-    height: 150px;
-    border-radius: 20px;
-
-    margin-left: auto;
-    margin-right: auto;
-}
-.container{
-    margin-bottom: 10px;
-    padding-bottom: 15px;
-    height: auto;
-    align-items: center;
-    align-content: center;
-}
-.removeButton{
-    background-color: rgb(208, 38, 38);
-    display: flex;
-    align-items: center;
-    text-align: center;
-    height: 40px;
-    align-content: center;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    width: 23%;
-}
-.removeButton button{
-    text-align: center;
-}
-
-.itemName{
-    text-align: center;
-}
-
-.addToCart{
-    width: 50%;
-    background-color: green;
-    height: 50px;
-    border-radius: 10px;
-    font-size: 20px;
-    border: none;
-    
-    
-}
-.addToCart:hover{
-    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
-    cursor:grab;
-}
-.addToCartBox{
-    padding-top: 4px;
-}
-
-.finalizeCart{
-    font-size: 24px;
-    color: gold;
-    background-color: green;
-    
-    height: 50px;
-    border-radius: 10px;
-}
-#icon{
+    box-shadow: 20px 20px 50px 50px rgb(31, 14, 53);
+  }
+  .navWords {
     display: none;
-}
-.navWords{
-    height: 10px;
+    align-items: center;
+  }
+  #icon {
     display: contents;
-}
-
-@media (max-width:500px){
-    body{
-        width: 100%;
-    }
-    .accountNavMenu{
-        padding-right: 10px;
-        margin-right: auto;
-        margin-left: auto;
-        font-size: 10px;
-        padding: 0;
-        align-items: center;
-        list-style: none;
-        text-align:right;
-        background-color: #222;
-        border: none;
-        text-align: center;
-    }
-    #navBarLogo{
-        background-image: linear-gradient(to top, rgb(31,14,53) 0%, rgb(210,125,235) 100%);
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -moz-text-fill-color: transparent;
-        display: flex;
-        align-items: center;
-        font-size: 27px;
-        width: 99px;
-        margin-left: 20px;
-        }
-        .navBarMenu{
-            width: 100%;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            list-style: none;
-            text-align:center
-          
-        }
-        .navBarLinks{
-            color: gold;
-            /* display: flex; */
-            font-size: 1rem;
-            align-items: center;
-            text-decoration: none;
-            padding: 0 1rem;
-            height: 100%;
-            padding: 0;
-        
-        }
-        .slogan{
-            font-size: 30px;
-            text-align: center;
-            background-image: url("https://elements-video-cover-images-0.imgix.net/files/9bb5a313-72f8-431e-a674-fb1f3e56b5ce/inline_image_preview.jpg?auto=compress&crop=edges&fit=crop&fm=jpeg&h=800&w=1200&s=9b8d4a5bf3d6265d428badc39bdafa05");
-            color: gold;
-            margin: 0;
-            height: 5vh;
-            align-items: center;
-            place-content: center;
-            box-shadow: 20px 20px 50px 50px rgb(31,14,53) ;
-        }
-        .navWords{
-            display: none;
-            align-items: center;
-        }
-        #icon{
-            display: contents;
-            color: gold;
-        }
-        .mainWeaponBox{
-            display:flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            height: 100%;
-            width: 100%;
-            text-align: center;
-        }
-        .weaponCard{
-            max-width:300px;
-            border: 2px solid black;
-            margin-top: 10px;
-            overflow: hidden;
-            overflow:auto;
-            margin-left: auto;
-            margin-right: auto;
-            align-items: center;
-            
-         }
-         .navBarLinks{
-            color: gold;
-            /* display: flex; */
-            align-items: center;
-            text-decoration: none;
-            padding: 0 1rem;
-            height: 100%;
-            padding: 0;
-        
-        }
-        .accountNavLink{
-            color: gold;
-            background-color: rgb(31,14,53);
-            font-size: 20px;
-            align-items: center;
-            text-decoration: none;
-            padding: 0 1rem;
-            height: 100%;
-            border-radius: 10px;
-        }
+    color: gold;
+  }
+  .mainWeaponBox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+  .weaponCard {
+    max-width: 300px;
+    border: 2px solid black;
+    margin-top: 10px;
+    overflow: hidden;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+  .navBarLinks {
+    color: gold;
+    /* display: flex; */
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    padding: 0;
+  }
+  .accountNavLink {
+    color: gold;
+    background-color: rgb(31, 14, 53);
+    font-size: 20px;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    border-radius: 10px;
+  }
 }
